@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage{tensor}
+\usepackage{braket}
+\usepackage{lastpage}
+\usepackage{subcaption}
+\graphicspath{{temika_guide_pics/}}
+
+
+\newcommand{\der}[2]{\frac{d #1 }{d #2}}
+\newcommand{\pder}[2]{\frac{\partial #1 }{\partial #2}}
+\newcommand{\dder}[2]{\frac{d^2 {#1} }{d {#2}^2}}
+\newcommand{\pdder}[2]{\frac{\partial^2 #1 }{\partial #2^2}}
+\newcommand{\di}[1]{\text{d} #1 }
+\newcommand{\pb}[1]{ \left\{ #1 \right\} }
+\newcommand{\lb}[1]{ \left[ #1 \right] }
+\newcommand{\grad}{\nabla}
+\newcommand{\divv}{\nabla \cdot }
+\newcommand{\curl}{\nabla \times }
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+\author{Guilherme Nettesheim}
+\title{A Quick Guide to Temika}
+
+\begin{document}
+\maketitle
+
+Temika has many features and is extremely powerful. It can also be tricky to use. The goal of this guide is to give you a quick introduction to using it, without making things too complicated.
+
+\section{Starting Temika}
+
+Before doing anything else, turn on the microscope.
+
+Once it has booted up, open the terminal, and type in \begin{verbatim}temika\end{verbatim}
+
+Before doing anything, turn on the microscope and anything else you'll be using.\\
+
+Open the terminal, and write temika
+
+IIDC Point
+
+Video Mode:
+0 - Standard and very fast
+1 - Data is binned 2x2 . Don't use this one with CMOS camers
+7 - Low noise. Higher SN ratio. Good for fluorescent. 
+
+
+Converter is 12 bit
+Color Coding:
+MONO8 - Something done to raw data
+MONO16 - Easy to 
+RAW8 - Direct data from sensor, faste
+MONO12 - Never use it 
+
+Packet Size - Very mysterious... ``Determines the range of frame rates''
+
+Don't use these
+=-----
+Brightness
+Auto Exposure
+Gamma
+Trigger Delay
+
+use these
+=-----
+Shutter
+Gain
+Frame Rate
+
+Trigger:
+Internal
+
+--We never use these, but essentially triggered externall
+External Mode 0
+External Mode 1
+External Mode 15
+
+Software (Opens Timeout and Send buttons)
+Timeout: How long to wait 
+
+Filter: C function
+
+Record = This camera
+(Same function as in Temika window?)
+
+Andor iXon3
+Zyla
+
+Shutter: Close, open
+Auto don't use
+
+Signal/Noise vs. speed tradeoffs:
+-------------------------------
+Vertical Speed
+Vertical Amplitude: +1, +2, +3, +4
+Horizontal Speed
+
+
+Amplifier: Conventional, EM
+Amplifier Gain: 5.1, 2.4, 1.0
+EM Gain:
+
+AD Converter: 14 bit, 16bit
+Count Convert Mode: Counts, Electrons, Photons
+Count COnvert Wavelength:
+Baseline Offset, Baseline Clamp
+
+Image properties:
+X 1, 512
+Y 1, 512
+X Bin: 1, 2, 4, ..., 256
+Y Bin: same
+
+
+Exposure: 0.10 s
+Kinetic Cycle: 0.10 s 
+Frame transfer: On, off
+
+Trigger:
+
+Internal,
+
+'dont' bother'
+External
+Fast External
+External Start
+External Exposure
+
+Software (Timeout, etc)
+
+Multiled:
+None
+External 0
+External 1
+External 2
+
+Illumination:
+Clock?
+
+Trigger 0, Trigger 1, Trigger 2, Trigger 3
+Recording
+
+
+
+\end{document}

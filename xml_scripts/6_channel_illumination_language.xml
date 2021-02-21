@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--*- mode: xml -*-->
+<temika>
+	<illumination>
+		<!-- Set Ch2 to intensity 20000. Intensity goes from 0 to 2^16 - 1 --> 
+		<set number="2">20000</set>
+
+		<!-- Set Ch3 to intensity 10000. --> 
+		<set number="3">10000</set>
+
+		<!-- Enable Ch2. This is because 2^2 = 4. To enable ChN, use 0x2^N -->
+		<enable>0x4</enable> 
+
+		<!-- Enable Ch3. This is because 2^3 = 8. To enable ChN, use 0x2^N -->
+		<enable>0x8</enable> 
+
+		<!-- Enable sequence ON or OFF -->
+		<sequence_enable>ON</sequence_enable>
+
+		<!-- Set number of steps to 2 (maximum is 10) -->
+		<sequence_steps_number>2</sequence_steps_number> 
+
+		<!-- Reset the sequence -->
+		<sequence_reset></sequence_reset>
+
+		<!-- Set the first sequence step to Channel 2 -->
+		<sequence_step number="0">0x4</sequence_step>
+
+		<!-- Set the second sequence step to Channel 3 -->
+		<sequence_step number="1">0x8</sequence_step> 
+
+		<!-- Enable trigger 0 -->
+		<trigger_in>0x1</trigger_in>
+
+		<!-- Do not record the illumination -->
+		<record>OFF</record>
+	</illumination>
+</temika>

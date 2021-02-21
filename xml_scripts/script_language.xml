@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!--*- mode: xml -*-->
+<temika>
+	
+	<sleep>1:1:1.1</sleep> <!-- Waits 1hour 1minute 1.1 second -->
+	<timestamp>0</timestamp> <!-- Creates a timestamp. [0..9] -->
+	<sleep timestamp="0">1:1:1.1</sleep> <!-- Waits 1hour 1minute 1.1 second from timestamp 0-->
+	
+	<repeat repetitions="10"> <!-- Repeats a top level block. No nesting. -->
+	<sleep>0:0:1</sleep>
+	</repeat>
+
+	<aod>
+
+		<flattening>OFF</flattening>
+		<triggering>ON</triggering>
+		<interdelay>107</interdelay>
+		<period>2500</period>
+		<record>OFF</record>
+		
+		<peripheral_clock number="0">
+			<reset></reset>
+			<run>OFF</run>
+			<period>20000</period>
+			<pulse_length>50000</pulse_length>
+			<delay>1</delay>
+		</peripheral_clock>
+		
+		<adc>
+			<gain number="0">1</gain>
+			<gain number="1">1</gain>
+			<gain number="2">1</gain>
+			<gain number="3">1</gain>
+			<gain number="4">1</gain>
+			<gain number="5">1</gain>
+			
+			<delay>1</delay>
+			<readback_first>1</readback_first>
+			<readback_last>1</readback_last>
+			<transmission>OFF</transmission>
+			<record>OFF</record>
+		</adc>
+		
+		<calibration>
+			<scale>0.003</scale>
+			<angle>1.5</angle>
+			<x>600</x>
+			<y>400</y>
+			<bin_x>1</bin_x>
+			<bin_y>1</bin_y>
+			<handedness>1</handedness>	
+		</calibration>
+	</aod>
+	
+	<camera name="IIDC AVT Pike F100B">
+		<select></select>
+		<name>New Name</name>
+		<transmission>ON</transmission>
+		<filter_dll>/home/jk400/utilities/filter_camera.so</filter_dll>
+		<filter_enable>ON</filter_enable>
+		<send_trigger></send_trigger>
+		<trigger_timeout>5.2</trigger_timeout>
+		<record>OFF</record>
+		
+		<feedback>
+			<parameter number="0">3.5</parameter> <!-- Feedback parameters -->
+			<dll>/home/jk400/workspace/temika/Debug/feedback_camera.so</dll>
+			<run>OFF</run>
+			<period>1</period>
+		</feedback>
+		
+		<ximea>
+			<image_format>MONO8</image_format> <!-- MONO8, MONO16 -->
+			<look_up_table_data>TODO</look_up_table_data>
+			<look_up_table>OFF</look_up_table> <!-- ON, OFF -->
+			<downsampling>2x2 BINNING</downsampling> <!-- 1x1 BINNING, 2x2 BINNING -->
+			<size>100 100 0 0</size> <!--size_x, size_y, position_x, position_y-->
+			<bad_pixel_correction>ON</bad_pixel_correction> <!-- ON, OFF -->
+			<exposure>1000</exposure>
+			<gain>1.11</gain>
+			<aeag>OFF</aeag> <!-- ON, OFF -->
+			<aeag_exposure_priority>0.1</aeag_exposure_priority>
+			<aeag_exposure_maxlimit>5000</aeag_exposure_maxlimit>
+			<aeag_gain_maxlimit>10</aeag_gain_maxlimit>
+			<aeag_average_intensity>30</aeag_average_intensity>
+			<hdr>OFF</hdr> <!-- ON, OFF -->
+			<hdr_t1>30000</hdr_t1>
+			<hdr_t2>10000</hdr_t2>
+			<hdr_t3>3000</hdr_t3>
+			<hdr_kneepoint1>30</hdr_kneepoint1>
+			<hdr_kneepoint2>50</hdr_kneepoint2>
+			<trigger>INTERNAL</trigger> <!-- INTERNAL, EXTERNAL, SOFTWARE -->
+		</ximea>
+	
+		<iidc>
+			<video_mode>0</video_mode>
+			<color_coding>MONO8</color_coding>
+			<size>1000 1000 0 0</size> <!--size_x, size_y, position_x, position_y-->
+			<packet_size>7576</packet_size>
+			<trigger>INTERNAL</trigger> <!-- INTERNAL, EXTERNAL0, EXTERNAL1, EXTERNAL15, SOFTWARE -->
+			
+			<brightness mode="relative">16</brightness> <!-- off, relative, absolute, auto -->
+			<exposure mode="relative">125</exposure>
+			<gamma mode="off"></gamma>
+			<shutter mode="relative">2000</shutter>
+			<gain mode="relative">0</gain>
+			<temperature mode="absolute">10</temperature>
+			<trigger_delay mode="off"></trigger_delay>
+			<frame_rate mode="relative">1000</frame_rate>
+			
+			<avt_channel_balance>-277</avt_channel_balance>
+		</iidc>
+		
+		<andor>
+			<em_gain>4</em_gain>
+			<vertical_speed>0</vertical_speed>
+			<vertical_amplitude>NORMAL</vertical_amplitude> <!-- NORMAL, +1, +2, +3, +4 -->
+			<shutter>CLOSE</shutter> <!-- CLOSE, OPEN, AUTO -->
+			<trigger>INTERNAL</trigger> <!-- INTERNAL, EXTERNAL, FAST_EXTERNAL, EXTERNAL_START, EXTERNAL_EXPOSURE, SOFTWARE -->
+			<temperature>-60</temperature>
+			<cooler>ON</cooler> <!-- ON, OFF -->
+			<cooler_mode>MAINTAIN</cooler_mode> <!-- MAINTAIN, RETURN -->
+			<fan>FULL</fan> <!-- FULL, LOW, OFF -->
+			<exposure>0.0001</exposure>
+			<kinetic_cycle>1</kinetic_cycle>
+			<frame_transfer>OFF</frame_transfer> <!-- ON, OFF -->
+			<size>1 512 1 512 1 1</size> <!-- x_start, x_end, y_start, y_end, x_bin, y_bin -->
+			<adc>14</adc> <!-- 14, 16 -->
+			<amplifier>CONVENTIONAL</amplifier> <!-- CONVENTIONAL, EM -->
+			<horizontal_speed>0</horizontal_speed>
+			<amplifier_gain>5.1</amplifier_gain> <!-- 5.1, 2.4, 1.0 -->
+			<count_convert_mode>COUNTS</count_convert_mode> <!-- COUNTS ELECTRONS PHOTONS -->
+			<count_convert_wavelength>0</count_convert_wavelength>
+			<baseline_offset>200</baseline_offset> <!-- Range between -1000, 1000. Values multiples of 100 --> 
+			<baseline_clamp>ON</baseline_clamp>
+		</andor>
+		
+	</camera>
+
+	<microscope>
+		<eclipsetie>
+			<light_path>L100</light_path> <!-- EYE, L100, R100, L80 -->
+			<pfs_enable>OFF</pfs_enable>
+			<pfs_offset>20000</pfs_offset>
+			<pfs_status></pfs_status> <!-- reply: offset, focus, enabled, moving, limit_low, limit_high -->
+			<zdrive_move_absolute>1935.500 4</zdrive_move_absolute> <!-- position, speed (0..8) -->
+			<zdrive_move_relative>-2.400 4</zdrive_move_relative> <!-- displacement, speed (0..8) -->
+			<zdrive_escape>OFF</zdrive_escape>
+			<zdrive_status></zdrive_status> <!-- reply: position, escape, moving, moving, limit_low, limit_high -->
+			<dialamp_control>ON</dialamp_control>
+			<dialamp_enable>ON</dialamp_enable>
+			<dialamp_intensity>50</dialamp_intensity> <!-- 0 .. 255 -->
+			<filter_block_cassette>1</filter_block_cassette> <!-- 1 .. 6 -->
+			<condenser>2</condenser><!-- 1 .. 5 -->
+		</eclipsetie>
+		
+		<intensilight>
+			<shutter>OPEN</shutter> <!-- OPEN, CLOSE -->
+			<shutter_schedule>1.2</shutter_schedule> <!-- [0.1 .. 100.0] -->
+			<nd_filter>16</nd_filter> <!-- 1, 2, 4, 8, 16, 32 -->
+			<remote_enable>OFF</remote_enable> <!-- ON, OFF -->
+			<remote_led_brightness>DARK</remote_led_brightness> <!-- OFF, DARK, BRIGHT -->
+		</intensilight>
+		
+		<xystage axis="x">
+			<move_relative>333.05 1</move_relative> <!-- displacement, period -->
+			<!-- displacement >= 1e9 +Continuous --> <!-- displacement <= -1e9 -Continuous -->
+			<move_absolute>0.00 1</move_absolute> <!-- position, period -->
+			<reset></reset>
+			<enable>ON</enable>
+			<wait_moving_end></wait_moving_end> <!-- Waits while stage is moving -->
+			<status></status> <!-- reply: position, enabled, moving, limit_low, limit_high -->
+			<input_enable>ON</input_enable> <!-- Enable input device, works for any axis -->
+		</xystage>
+	</microscope>
+	
+	<algae>
+		<adc_samples>10</adc_samples> <!-- Number of ADC samples to average 0 -> 1048575 -->
+		<led_duty_cycle number="0">0.72</led_duty_cycle> <!-- LED duty cycle 0 -> 1 , number=0,1,2 -->
+		<led_max_current number="0">0.3</led_max_current> <!--  0A -> 1A , number=0,1,2 -->
+		<dimmer>0.33</dimmer> <!-- PWM duty cycle 0 -> 1 -->
+		<pwr0>0.16</pwr0> <!-- PWM duty cycle 0 -> 1 -->
+		<pwr1>0.48</pwr1> <!-- PWM duty cycle 0 -> 1 -->
+		<relay>ON</relay> <!-- ON, OFF -->
+		<feedback>
+			<dll>/home/jk400/workspace/temika/Debug/feedback_algae.so</dll>
+			<run>ON</run>
+		</feedback>
+		<calibration>
+			<tc0>1. 0</tc0> <!-- TC0, gain, offset -->
+			<tc1>1. 0</tc1> <!-- TC1, gain, offset -->
+			<pt1000>1. 0</pt1000> <!-- TC1, gain, offset -->
+		</calibration>
+		<stepper axis="x">
+			<move_relative>333.05 1</move_relative> <!-- displacement, period -->
+			<!-- displacement >= 1e9 +Continuous --> <!-- displacement <= -1e9 -Continuous -->
+			<move_absolute>0.00 1</move_absolute> <!-- position, period -->
+			<reset></reset>
+			<enable>ON</enable>
+			<wait_moving_end></wait_moving_end> <!-- Waits while stage is moving -->
+			<status></status> <!-- reply: position, enabled, moving, limit_low, limit_high -->
+			<input_enable>ON</input_enable> <!-- Enable input device, works for any axis -->
+		</stepper>
+	</algae>
+
+	<temperature name="Waterbath Grant GP200">
+		<set>37</set>
+		<change>2.31</change>
+		<record>ON</record>
+		<waterbath>
+			<sensor>INTERNAL</sensor> <!-- INTERNAL, EXTERNAL -->
+		<waterbath>
+	</temperature>
+	
+	<temperature name="Peltier">
+		<set>25</set> <!-- Omitted number attribute means 0-->
+		<set number="0">20</set>
+		<change>-1.45</change>
+		<record>ON</record>
+		<peltier>
+			<clock>4294964897></clock> <!-- Main clock value, period = ( 2^32 - value + 1 ) / 24MHz -->
+			<average>100</average> <!-- Number of samples to average, defines main loop period -->
+			<pwr_duty_cycle number="0">49</pwr_duty_cycle>
+			<pwr_in_control number="0">0 0</pwr_in_control> <!-- in_A in_B -->
+			<digital_output number="0">ON</digital_output> <!-- ON, OFF -->
+			<feedback number="0">
+				<enable>OFF</enable> <!-- ON, OFF -->
+				<type>PELTIER</type> <!-- PELTIER, HEATER -->
+				<sensor>0</sensor> <!-- Temperature sensor, 0->7 -->
+				<max_duty_cycle>100</max_duty_cycle>
+				<kp>100000</kp> <!-- out = kp * ( err + 1/ti * integral_err + td * derivative_err -->
+				<ti>1000000</ti>
+				<td>0</td>
+			</feedback>
+			<peltier>
+			<calibration number="2">
+				<raw_gain>1</raw_gain> <!-- out = gain * in + offset -->
+				<raw_offset>0</raw_offset>
+				<temperature_gain>1</temperature_gain> <!-- T' = gain * T + offset -->  <!-- NTC: 1/T = offset + gain * ln(R) -->
+				<temperature_offset>0</temperature_offset>
+			</calibration>
+		</peltier>
+	</temperature>
+	
+	<ledlinear>
+		<set>1000</set> <!-- 0 -> 2^16-1 -->
+		<enable>OFF</enable> <!-- ON, OFF -->
+		<pulse>0.1</pulse> <!-- 0.01s -> 10s -->
+		<external_trigger>ON</external_trigger> <!-- ON, OFF -->
+		<number>0</number> <!-- 0, 1 -->
+		<record>ON</record> <!-- ON, OFF -->
+	</ledlinear>
+	
+	<multiled device="microscope" >
+		<record>ON</record> <!-- ON, OFF -->
+		<trigger>INTERNAL</trigger> <!-- INTERNAL, EXTERNAL0, EXTERNAL1, EXTERNAL2 -->
+		<sequence_enable>ON</sequence_enable> <!-- Enable sequence -->
+		<sequence_reset></sequence_reset> <!-- Reset sequence -->
+		<sequence_steps_number>2</sequence_steps_number> <!-- Number of steps in a sequence, 1->6 -->
+		<sequence_step number="0">CHANNEL0_LED0</sequence_step> <!-- NONE, CHANNEL0_LED0, CHANNEL0_LED1 etc -->
+		<set channel="0">0.83</set> <!-- 0 -> 1 -->
+		<enable channel="0">ON</enable> <!-- ON, OFF -->
+		<number channel="0">3</number> <!-- LED number, 0,1,2,3 -->
+	</multiled>
+	
+	<illumination>
+		<set number="3">20000</set> <!-- LED0 -> LED3, 0 > 2^16-1 --> 
+		<enable>0x0</enable> <!-- 6bit bitfield -->
+		<feedback>0x0</feedback> <!-- 6bit bitfield, 0=current, 1=power -->
+		<trigger_in>0x3</trigger_in><!-- 4bit bitfield -->
+		<clock>6210000</clock> <!-- Clock for ADC readout, (100MHz / (value+1)), 0 disabled, resets adc readout. -->
+		<sequence_steps_number>2</sequence_steps_number> <!-- Number of steps in a sequence, 1->10 -->
+		<sequence_enable>OFF</sequence_enable> <!-- Enable sequence -->
+		<sequence_reset></sequence_reset> <!-- Reset sequence -->
+		<sequence_step number="2">0xf</sequence_step> <!-- Define a step number, 6bit bitfield -->
+		<record>OFF</record>
+	</illumination>
+		
+	<save>
+		<header>Test Header.</header>
+		<basename>test_file</basename>
+		<append>TWONUMBERS</append> <!-- NOTHING, UNIQUENUMBER, DATE, TWONUMBERS -->
+		<first_number_set>0</first_number_set>
+		<second_number_set>0</second_number_set>
+		<first_number_change>-1</first_number_change>
+		<second_number_change>2</second_number_change>
+	</save>
+	
+	<gui>
+		<console>ON</console> <!-- ON, OFF -->
+		<scriptbutton_add>name</scriptbutton_add> <!-- Must be a proper filename -->
+		<scriptbutton_remove>name</scriptbutton_remove> <!-- Name displayed on the button -->
+	</gui>
+	
+	<trap number="12"> <!-- 0-63, -1 used for creating first new available -->
+		<new>0 0 1 1 0 1</new> <!-- x, y, gain -->
+		<!-- <delete></delete> -->
+		<enable>ON</enable> <!-- ON, OFF -->
+		<!--<enable_block>0xffffffffffffffff</enable_block>  64bit bitmask -->
+		<!--<disable_block>0xffffffffffffffff</disable_block>  64bit bitmask -->
+		<gain>0.2</gain>
+		<offset>0.1 -0.2</offset>
+		<shape>
+			<period>20000</period>
+			<repetitions>5</repetitions>
+			<step>2</step>
+			<selected_size>1</selected_size>
+			<address_offset>1</address_offset>
+			<!--<wait_repetitions_end></wait_repetitions_end>-->
+		</shape>
+		
+	</trap>
+	
+	<trap number="0" >
+		<path>
+			<delete></delete>
+			<new>
+				0 0
+				0 0.1
+				0 0.2
+				0 0.3
+			</new>
+			<period>20000</period>
+			<repetitions>5</repetitions>
+			<wait_repetitions_end></wait_repetitions_end>
+		</path>
+	</trap>
+	
+</temika>

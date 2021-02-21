@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--*- mode: xml -*-->
+<temika>
+	<multiled device="microscope" >
+
+                <!-- Set channel 0 to intensity 0.83. Intensity goes from 0 to 1 -->
+		<set channel="0">0.83</set>
+
+                <!-- Set channel 1 to intensity 0.5 -->
+		<set channel="1">0.50</set>
+
+                <!-- Set channel 0 LED to 0-->
+		<number channel="0">0</number>
+
+                <!-- Set channel 1 LED to 2-->
+		<number channel="1">2</number>
+
+		<!-- Enable channel 0 -->
+		<enable channel="0">ON</enable>
+
+		<!-- Enable channel 1 -->
+		<enable channel="1">ON</enable>
+
+		<!-- Enable sequence ON or OFF -->
+		<sequence_enable>ON</sequence_enable> <!-- Enable sequence -->
+
+		<!-- Set number of steps to 2 (maximum is 6)-->
+		<sequence_steps_number>2</sequence_steps_number>
+
+		<!-- Reset the sequence -->
+		<sequence_reset></sequence_reset>
+
+		<!-- Set the first sequence step to Channel 0 LED 0 -->
+		<sequence_step number="0">CHANNEL0_LED0</sequence_step>
+
+		<!-- Set the first sequence step to Channel 1 LED 2 -->
+		<sequence_step number="1">CHANNEL1_LED2</sequence_step>
+
+		<!-- Enable EXTERNAL0 trigger (options are INTERNAL, EXTERNAL0...) -->
+		<trigger>EXTERNAL0</trigger>
+
+		<!-- Do not record the illumination -->
+		<record>ON</record>
+	</multiled>
+</temika>

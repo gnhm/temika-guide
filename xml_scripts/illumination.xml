@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--*- mode: xml -*-->
+<!-- Run code for microscope in 0.34. Testing the effect of red, green, and blue fluorescence in same sample. -->
+<temika>
+	<illumination>
+		<set number="0">0</set> <!-- Set each color a different intensity, between 0 and 2^16 - 1 -->
+		<set number="1">0</set> 
+		<set number="2">1000</set>
+		<set number="3">0</set>
+		<sequence_steps_number>2</sequence_steps_number> <!-- Number of sequence steps -->
+		<sequence_step number="0">0x20</sequence_step> <!-- Hex representation of which colors to turn on. 0x20 is hex for 32. 32 in binary is 100000, so channels 0-5 are off (0) and channel 6 is on (1). -->
+		<sequence_step number="1">0x0e</sequence_step> <!-- Same idea. 0x0e = 14 = 001110, so channels 1,2,3 are on, and channels 0, 4,5 are off. -->
+		<sequence_enable>ON</sequence_enable> <!-- Enable sequence -->
+		<sequence_reset></sequence_reset> <!-- Reset sequence -->
+		<trigger_in>0x1</trigger_in> <!-- Different triggers... I think 0x1 is the only one used -->
+		<record>ON</record> <!-- Start recording -->
+	</illumination>
+
+</temika>
