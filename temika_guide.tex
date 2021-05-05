@@ -46,11 +46,11 @@
 \begin{minipage}{\textwidth}
 \maketitle
 \begin{abstract}
-Temika is the home made program that interfaces with the optical tweezers, the Nikon Optical microscopes, and various other equipment of commercial or home-made origin.   Some users purely use the graphical front end, and this contains all the ``physical" buttons on the microscope, plus many settings of the cameras and other equipment.   Importantly, everything in the front end can be coded as a script, for example to automate complex sequences.   It is also possible to implement more complex operations, for example triggered by some event.   Jurij has created this code to capture data and to control a variety of lab equipment; it  has many features and is extremely powerful.    Undoubtedly, it can also be intimidating to use, and it runs in linux which is unfamiliar to some users.\\
+Temika is the homemade program that interfaces with the optical tweezers, the Nikon Optical microscopes, and various other equipment of commercial or homemade origin.   Some users purely use the graphical front-end, and this contains all of the ``physical'' buttons on the microscope, plus many settings of the cameras and other equipment.   Importantly, everything in the front-end can be coded as a script, for example to automate complex sequences.   It is also possible to implement more complex operations, for example triggered by some event.   Jurij has created this code to capture data and to control a variety of lab equipment; it  has many features and is extremely powerful.    Undoubtedly, it can also be intimidating to use, and it runs in linux, which is unfamiliar to some users.\\
 
 This guide focuses on using Temika with the Nikon microscopes, which covers the work of many users.  The first part of this guide will cover how to turn on Temika, see something, record something, and turn the microscope off. The second part will give more detail on the many options, so you can optimize your experiment. The third part will give the rudiments of programming for Temika. The fourth contains descriptions of some commonly done experiments in the group.  \\
 \vspace{0.5cm}\\
-Special Acknowledgements: Jurij as the author of Temika, Luigi for years of user support, Guil for the first draft of this guide.
+Special Acknowledgements: Jurij as the author of Temika, Luigi for years of user support, and Guilherme for authoring the first draft of this guide.
 \end{abstract}
 \end{minipage}
 
@@ -254,7 +254,7 @@ Temika saves files in a raw format called the ``movie''.   This is a very flexib
 
 On the linux computers in the labs there are two commands to export the videos into uncompressed tiff images: movie2tiff and movie2tiff\verb|_|color.
 
-There are also  Luigi’s files for doing manipulations of .movie into other formats (mp4, load into MATLAB or ImajeJ/Fiji, but they do not work with colour formats): http://people.bss.phy.cam.ac.uk/~lf352/      If your data analysis is going to be in Matlab, you can load the .movie directly there without other conversions. Code to do that in C++ also exists (Jurij, and Part III project of George Haskell 2021) and the same could be done in Python.\\
+There are also  Luigi’s files for doing manipulations of .movie into other formats (mp4, load into MATLAB or ImajeJ/Fiji, but they do not work with colour formats): \url{http://people.bss.phy.cam.ac.uk/~lf352/}. If your data analysis is going to be in Matlab, you can load the .movie directly there without other conversions. Code to do that in C++ also exists (Jurij, and Part III project of George Haskell 2021) and the same could be done in Python.\\
 
 Note 1 - it is a good idea to keep one copy of the original .movie data.   You can compress it into zip or tar at no loss.
 
@@ -458,7 +458,7 @@ todo
 
 \chapter{Applications/Protocols}
 
-\section{Flickering - Guil}
+\section{Flickering - Guilherme}
  todo
 
 \section{Malaria tweezing - Emma Jones}
