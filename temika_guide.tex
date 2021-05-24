@@ -252,7 +252,6 @@ Whichever way you have moved the data out of the lab, once you know it is safely
 \section{How to use .movie files?}
 Temika saves files in a raw format called the ``movie''.   This is a very flexible format, with useful metadata for example on timing and frame sizes.   You can do things like change the frame size during your recording (although this would make conversions more complicated later!).
 
-
 On the linux computers in the labs there are two commands to export the videos into uncompressed tiff images: movie2tiff and movie2tiff\verb|_|color.
 
 There are also  Luigi’s files for doing manipulations of .movie into other formats (mp4, load into MATLAB or ImajeJ/Fiji, but they do not work with colour formats): \url{http://people.bss.phy.cam.ac.uk/~lf352/}. If your data analysis is going to be in Matlab, you can load the .movie directly there without other conversions. Code to do that in C++ also exists (Jurij, and Part III project of George Haskell 2021) and the same could be done in Python.\\
@@ -261,11 +260,9 @@ Note 1 - it is a good idea to keep one copy of the original .movie data.   You c
 
 Note 2 -  many of the conversions from .movie will lose data quality (compression, or depth of bits) and many will lose important info like the timestamp (framerate) - so convert only if necessary.      It is obviously a good idea to have small, compressed, exports of the parts of movies that you want to show in presentations.
 
+\subsection{Reading .movie files with Python}
 
-
-
-
-
+The \verb|.movie| files can be opened with Python using \verb|python-temika-reader|, a small library written by Guilherme Nettesheim. The latest version is hosted in the git repository \url{https://github.com/gnhm/python-temika-reader}. For more information on it, check out the \verb|README| on the linked repository.
 
 \newpage
 
