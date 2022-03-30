@@ -91,7 +91,7 @@ The \textbf{Temika Video} window will display the image. At first, it will be al
 \includegraphics[width=0.75\textwidth]{display}
 \end{figure}
 
-Once open, check the \textbf{Automatic} box. The display should now change to display something, most likely static. You may now close the \textbf{Display} window if you wish.
+Once open, click on where is says \textbf{Frame 0} and then check the \textbf{Automatic} box. The display should now change to display something, most likely static. You may now close the \textbf{Display} window if you wish.
 
 
 
@@ -520,6 +520,16 @@ todo
 
 
 \chapter{Other}
+
+\section{Troubleshooting}
+If you try to start up Temika and get an error saying \verb|Address already in use| (see image below), then someone else is still logged in on the PC and has not closed the Temika software. You can see who else is still logged in by typing \verb|finger| in the terminal. Then either ask that person to logout or press \verb|Ctrl| \verb|Alt| \verb|Fx| where x can be any of the numbers 1-12; eventually you should find the other user logged in then you can close temika. Repeat to find your own login screen again. Note: this may become redundant if Jurij ends the possibility for multi-login.
+
+\begin{figure}[h]
+		\includegraphics[width=6cm]{fig_addressError}
+		\caption{"Address already in use" error which prevents temika startup}
+\end{figure}
+
+
 
 \section{When to call Jurij}
 Jurij will have helped you startup, and is generally more than happy to know how you proceed with your Temika/imaging adventures.   If you have advanced requests, desires to go beyond what you are currently getting,  talk to Jurij and/or Pietro.   \\
